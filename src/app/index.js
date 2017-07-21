@@ -31,11 +31,11 @@ angular.module('rogelioApp', ['ngAnimate', 'ngCookies',
                     })
                     .state('home.empanadas', {
                         url: '/empanadas',
-                        controller: 'TableController',
+                        controller: 'EmpanadaController',
                         controllerAs: 'vm',
-                        templateUrl: 'app/views/table.html',
+                        templateUrl: 'app/views/empanadas.html',
                         data: {
-                            title: 'Table'
+                            title: 'Pedido de Empanadas'
                         }
                     })
                     ;
