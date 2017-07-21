@@ -6,18 +6,24 @@
     </h1>
 
     <div>
-        <md-button class="md-raised md-accent" ng-click="vm.performProgress()"
-                   ng-show="vm.pedido.status == 'in_progress'">
-            Agregar pedido
-        </md-button>
         <md-button class="md-raised md-active" ng-click="vm.abrirPedido()"
                    ng-show="vm.pedido.status == 'closed'">
             Abrir pedido
         </md-button>
-        <md-button class="md-raised md-warn" ng-click="vm.performProgress()"
+        <md-button class="md-raised md-warn" ng-click="vm.cerrarPedido()"
                    ng-show="vm.pedido.status == 'in_progress'">
             Cerrar pedido
         </md-button>
+    </div>
+
+    <div ng-show="vm.pedido.status == 'in_progress'">
+        <ul style="list-style: none;">
+            <li ng-repeat="empanadaTipo in vm.pedido.available_types track by $index" style="display: inline-block;">
+                <md-button class="md-raised md-accent" ng-click="vm.pedir(empanadaTipo)">
+                    {{empanadaTipo}}
+                </md-button>
+            </li>
+        </ul>
     </div>
 
     <h2 ng-show="vm.pedido.status == 'in_progress'">
