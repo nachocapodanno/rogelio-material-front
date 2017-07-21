@@ -20,15 +20,6 @@ angular.module('rogelioApp', ['ngAnimate', 'ngCookies',
                             title: 'Dashboard'
                         }
                     })
-                    .state('home.office', {
-                        url: '/office',
-                        templateUrl: 'app/views/profile.html',
-                        controller: 'ProfileController',
-                        controllerAs: 'vm',
-                        data: {
-                            title: 'Profile'
-                        }
-                    })
                     .state('home.empanadas', {
                         url: '/empanadas',
                         controller: 'EmpanadaController',
@@ -37,6 +28,15 @@ angular.module('rogelioApp', ['ngAnimate', 'ngCookies',
                         data: {
                             title: 'Pedido de Empanadas'
                         }
+                    })
+                    .state('home.office', {
+                      url: '/open-office',
+                      controller: 'OpenOfficeController',
+                      controllerAs: 'vm',
+                      templateUrl: 'app/views/openOffice.html',
+                      data: {
+                        title: 'Abrir oficina'
+                      }
                     })
                     ;
 

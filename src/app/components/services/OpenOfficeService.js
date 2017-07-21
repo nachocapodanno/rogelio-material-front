@@ -14,11 +14,10 @@
         return $http({
           url: "http://74.207.253.57:3010/openoffice/open",
           method: "POST",
-          headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-          data: $httpParamSerializerJQLike({
+          data: {
             status: "open",
             name: "zelzo"
-          })
+          }
         });
       }
     }
