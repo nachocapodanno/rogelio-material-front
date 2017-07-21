@@ -46,7 +46,17 @@ angular.module('angularMaterialAdmin', ['ngAnimate', 'ngCookies',
         data: {
           title: 'Table'
         }
-      });
+      })
+      .state('home.openOffice', {
+        url: '/open-office',
+        controller: 'OpenOfficeController',
+        controllerAs: 'open',
+        templateUrl: 'app/views/openOffice.html',
+        data: {
+          title: 'Flowcode Office'
+        }
+      })
+    ;
 
     $urlRouterProvider.otherwise('/dashboard');
 
