@@ -22,6 +22,21 @@
                 });
         };
 
+        vm.cerrarPedido = function () {
+            empanadasService
+                .cerrarPedido(function (pedidoData) {
+                    vm.pedido = pedidoData;
+
+                });
+        };
+        vm.pedir = function (tipo) {
+            empanadasService
+                .pedirDo(tipo, function (pedidoData) {
+                    vm.pedido = pedidoData;
+                });
+        };
+
+
         empanadasService
             .loadPedido(function (pedidoData) {
                 vm.pedido = pedidoData;
