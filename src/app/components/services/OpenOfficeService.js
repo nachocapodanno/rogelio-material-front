@@ -19,6 +19,12 @@
             name: "zelzo"
           }
         });
+      },
+      getStatus: function() {
+        return $http({
+          url: "http://74.207.253.57:3010/openoffice/status",
+          method: "GET"
+        });
       }
     }
   }

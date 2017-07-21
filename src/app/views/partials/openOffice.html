@@ -1,5 +1,9 @@
 <md-content ng-controller="ControlPanelController as vm" class="md-padding" style="text-align: center;">
-    <a ng-href="/#!/office">
+    <a ng-href="/#!/open-office" ng-hide="vm.officeStatus == 'open'">
         <img style="width:30%;border-radius: 50%;height:100%;" ng-src="assets/images/puerta.jpeg">
     </a>
+    <div ng-if="vm.officeStatus == 'open'">
+        <img style="width:30%;border-radius: 50%;height:100%;" ng-src="assets/images/puerta-close.gif">
+    </div>
+    <p ng-if="vm.officeStatus == 'open'">La oficina esta abierta  ¡te esperamos!</p>
 </md-content>

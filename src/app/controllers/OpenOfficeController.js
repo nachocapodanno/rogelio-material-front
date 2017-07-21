@@ -35,6 +35,11 @@
           });
 
     }
+
+    openOfficeService.getStatus()
+        .then(function(messages) {
+          vm.officeStatus = messages.data.status.status;
+        });
   }
 
 })();

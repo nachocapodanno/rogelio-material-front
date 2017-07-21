@@ -3,11 +3,11 @@
     angular
         .module('app')
         .controller('ControlPanelController', [
-            '$mdDialog', '$interval',
+            '$mdDialog', '$interval', 'openOfficeService',
             ControlPanelController
         ]);
 
-    function ControlPanelController($mdDialog, $interval) {
+    function ControlPanelController($mdDialog, $interval, openOfficeService) {
         var vm = this;
 
         vm.buttonEnabled = false;
@@ -16,7 +16,13 @@
         vm.performProgress = performProgress;
         vm.determinateValue = 10;
 
-        function performProgress() {
+        openOfficeService.getStatus()
+              .then(function(messages) {
+                vm.officeStatus = messages.data.status.status;
+        });
+
+
+      function performProgress() {
             vm.showProgress = true;
             interval = $interval(function() {
                 vm.determinateValue += 1;

@@ -1,6 +1,12 @@
 <div class="office-door">
-    <div class="perspective" ng-click="vm.openDoor()">
+
+    <div style="width:300px;"  ng-hide="vm.officeStatus == 'open'" class="perspective" ng-click="vm.openDoor()">
         <div id="door" class="thumb">
         </div>
+    </div>
+
+    <div ng-if="vm.officeStatus == 'open'">
+        <img style="width:300px;border-radius: 50%;" ng-src="assets/images/puerta-close.gif">
+        <p ng-if="vm.officeStatus == 'open'">La oficina esta abierta  ¡te esperamos!</p>
     </div>
 </div>
