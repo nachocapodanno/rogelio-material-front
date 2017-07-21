@@ -11,7 +11,15 @@
         var vm = this;
 
         vm.pedido = {
-            status: 'ready'
+            status: 'closed'
+        };
+
+        vm.abrirPedido = function () {
+            empanadasService
+                .abrirPedido(function (pedidoData) {
+                    vm.pedido = pedidoData;
+
+                });
         };
 
         empanadasService
